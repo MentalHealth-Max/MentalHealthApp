@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ankerraum - Hilfe bei psychischen Krisen</title>
+    <meta
+      name="description"
+      content="Eine ruhige, gefuehrte App mit Soforthilfe, Tipps und Kontakten fuer psychische Belastung und Krisen."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#start" aria-label="Ankerraum Startseite">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>
+          <strong>Ankerraum</strong>
+          <small>Du bist nicht allein.</small>
+        </span>
+      </a>
+      <nav class="topnav" aria-label="Hauptnavigation">
+        <a href="#symptome">Symptome</a>
+        <a href="#werkzeuge">Werkzeuge</a>
+        <a href="#notfallplan">Plan</a>
+      </nav>
+      <a class="emergency-link" href="tel:112">112</a>
+    </header>
+
+    <main id="start">
+      <section class="hero section-band">
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="path"></div>
+          <div class="stone stone-a"></div>
+          <div class="stone stone-b"></div>
+          <div class="stone stone-c"></div>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Ein Schritt nach dem anderen</p>
+          <h1>Wenn es gerade schwer ist, musst du da nicht allein durch.</h1>
+          <p>
+            Such dir aus, was gerade passiert. Ankerraum fuehrt dich durch kurze
+            Soforthilfe, beruhigende Skills und naechste Kontakte.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#checkin">Jetzt Hilfe finden</a>
+            <a class="button ghost" href="#akut">Ich bin akut gefaehrdet</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="crisis-strip" id="akut" aria-labelledby="akut-title">
+        <div>
+          <p class="eyebrow">Akute Gefahr</p>
+          <h2 id="akut-title">Wenn du dir gleich etwas antun koenntest: bitte hol sofort echte Hilfe.</h2>
+          <p>
+            Ruf <strong>112</strong> an, geh in die naechste Notaufnahme oder bitte eine Person,
+            bei dir zu bleiben. Diese App ersetzt keine professionelle Behandlung.
+          </p>
+        </div>
+        <div class="crisis-actions" aria-label="Schnelle Kontakte">
+          <a class="call-button" href="tel:112">Notruf 112</a>
+          <a class="call-button calm" href="tel:116123">TelefonSeelsorge 116 123</a>
+          <a class="call-button calm" href="tel:116111">Jugendtelefon 116 111</a>
+        </div>
+      </section>
+
+      <section class="guide section-band" id="checkin" aria-labelledby="guide-title">
+        <div class="section-heading">
+          <p class="eyebrow">Check-in</p>
+          <h2 id="guide-title">Was brauchst du in den naechsten Minuten?</h2>
+          <p>Waehle einen Einstieg. Du kannst jederzeit wechseln.</p>
+        </div>
+        <div class="guide-grid">
+          <button class="guide-step active" data-guide="sofort">
+            <span>01</span>
+            <strong>Sofort runterkommen</strong>
+            <small>Atmen, orientieren, Druck senken</small>
+          </button>
+          <button class="guide-step" data-guide="verstehen">
+            <span>02</span>
+            <strong>Symptom einordnen</strong>
+            <small>Passende Tipps und Warnzeichen</small>
+          </button>
+          <button class="guide-step" data-guide="kontakt">
+            <span>03</span>
+            <strong>Mit jemandem verbinden</strong>
+            <small>Textvorlagen und Telefonnummern</small>
+          </button>
+        </div>
+        <article class="guide-panel" id="guide-panel" aria-live="polite"></article>
+      </section>
+
+      <section class="section-band" id="symptome" aria-labelledby="symptom-title">
+        <div class="section-heading">
+          <p class="eyebrow">Symptom-Kompass</p>
+          <h2 id="symptom-title">Waehle aus, was gerade am ehesten passt.</h2>
+          <p>Die Vorschlaege sind keine Diagnose, sondern kleine Handlaeufe fuer den Moment.</p>
+        </div>
+        <div class="filter-row" role="tablist" aria-label="Symptomfilter">
+          <button class="filter-chip active" data-filter="alle" role="tab" aria-selected="true">Alle</button>
+          <button class="filter-chip" data-filter="akut" role="tab" aria-selected="false">Akut</button>
+          <button class="filter-chip" data-filter="koerper" role="tab" aria-selected="false">Koerper</button>
+          <button class="filter-chip" data-filter="gedanken" role="tab" aria-selected="false">Gedanken</button>
+        </div>
+        <div class="symptom-workbench">
+          <div class="symptom-grid" id="symptom-grid"></div>
+          <article class="symptom-detail" id="symptom-detail" aria-live="polite"></article>
+        </div>
+      </section>
+
+      <section class="section-band tools-band" id="werkzeuge" aria-labelledby="tools-title">
+        <div class="section-heading">
+          <p class="eyebrow">Werkzeuge</p>
+          <h2 id="tools-title">Drei kleine Dinge, die sofort greifbar sind.</h2>
+        </div>
+        <div class="tool-layout">
+          <article class="tool-panel breathing-tool">
+            <div>
+              <p class="eyebrow">60 Sekunden</p>
+              <h3>Atem-Anker</h3>
+            </div>
+            <div class="breath-circle" id="breath-circle">
+              <span id="breath-label">Bereit</span>
+            </div>
+            <button class="button primary" id="breath-toggle" type="button">Starten</button>
+          </article>
+
+          <article class="tool-panel grounding-tool">
+            <div>
+              <p class="eyebrow">5-4-3-2-1</p>
+              <h3>Zurueck in den Raum</h3>
+              <p id="grounding-text">Nenne 5 Dinge, die du sehen kannst.</p>
+            </div>
+            <div class="step-controls">
+              <button class="icon-button" id="ground-prev" type="button" aria-label="Vorheriger Schritt">&lsaquo;</button>
+              <span id="ground-count">1 / 5</span>
+              <button class="icon-button" id="ground-next" type="button" aria-label="Naechster Schritt">&rsaquo;</button>
+            </div>
+          </article>
+
+          <article class="tool-panel message-tool">
+            <div>
+              <p class="eyebrow">Nicht allein bleiben</p>
+              <h3>Nachricht an eine vertraute Person</h3>
+              <p id="message-template">
+                Hey, mir geht es gerade nicht gut. Kannst du kurz bei mir bleiben oder mit mir telefonieren?
+              </p>
+            </div>
+            <button class="button secondary" id="copy-message" type="button">Text kopieren</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-band plan-band" id="notfallplan" aria-labelledby="plan-title">
+        <div class="section-heading">
+          <p class="eyebrow">Mein Plan</p>
+          <h2 id="plan-title">Was hilft dir, wenn es wieder hochkommt?</h2>
+          <p>Die Eintraege werden nur in diesem Browser gespeichert.</p>
+        </div>
+        <form class="safety-plan" id="safety-form">
+          <label>
+            <span>Warnzeichen, die ich ernst nehme</span>
+            <textarea name="warning" rows="3" placeholder="z. B. ich ziehe mich komplett zurueck, suche nach Wegen, mir weh zu tun"></textarea>
+          </label>
+          <label>
+            <span>Dinge, die mich fuer 10 Minuten sichern</span>
+            <textarea name="actions" rows="3" placeholder="z. B. duschen, rausgehen, Eiswuerfel halten, Atem-Anker starten"></textarea>
+          </label>
+          <label>
+            <span>Menschen und Orte, die ich kontaktieren kann</span>
+            <textarea name="people" rows="3" placeholder="Name, Nummer, Ort, Praxis, Klinik"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="button primary" type="submit">Plan speichern</button>
+            <button class="button ghost" id="clear-plan" type="button">Leeren</button>
+          </div>
+          <p class="save-note" id="save-note" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>Ankerraum</strong>
+        <p>
+          In Deutschland: akute Gefahr <a href="tel:112">112</a>, TelefonSeelsorge
+          <a href="tel:116123">116 123</a>, Kinder- und Jugendtelefon
+          <a href="tel:116111">116 111</a>.
+        </p>
+      </div>
+      <div class="source-links">
+        <a href="https://www.deutsche-depressionshilfe.de/akut">Depressionshilfe Akuthilfe</a>
+        <a href="https://www.telefonseelsorge.de/">TelefonSeelsorge</a>
+        <a href="https://www.nummergegenkummer.de/">Nummer gegen Kummer</a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
